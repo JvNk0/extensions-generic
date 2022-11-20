@@ -38,6 +38,6 @@ export class HentaiEra extends Bentai {
 
     languageCode: LanguageCode = LanguageCode.ENGLISH
 
-    override imageCDN = 'https://m6.hentaiera.com'
+    override imageCDN = 'https://m2.hentaiera.com'
 
 }
