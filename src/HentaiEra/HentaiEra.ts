@@ -14,7 +14,7 @@ import {
 const DOMAIN = 'https://hentaiera.com'
 
 export const HentaiEraInfo: SourceInfo = {
-    version: getExportVersion('0.0.0'),
+    version: getExportVersion('0.0.1'),
     name: 'HentaiEra',
     description: `Extension that pulls items from ${DOMAIN}`,
     author: 'Netsky',
