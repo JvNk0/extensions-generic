@@ -1213,6 +1213,10 @@ class Parser {
         const pageCount = Number($('#load_pages').attr('value'));
         const imgDir = $('#load_dir').attr('value');
         const imgId = $('#load_id').attr('value');
+        let loadServer;
+        if (source.imageCDN == "hentaiera.com") {
+            loadServer = Number($('#load_server').attr('value'));
+        }
         if (!pageCount || isNaN(pageCount)) {
             throw new Error(`Unable to parse pageCount (found: ${pageCount}) for mangaId:${mangaId}`);
         }
@@ -1223,7 +1227,12 @@ class Parser {
             throw new Error(`Unable to parse imgId (found: ${imgId}) for mangaId:${mangaId}`);
         }
         for (let i = 1; i < pageCount; i++) {
-            pages.push(`${source.imageCDN}/${imgDir}/${imgId}/${i}.jpg`);
+            if (source.imageCDN == "hentaiera.com") {
+                pages.push(`https://m${loadServer}.${source.imageCDN}/${imgDir}/${imgId}/${i}.jpg`);
+            }
+            else {
+                pages.push(`${source.imageCDN}/${imgDir}/${imgId}/${i}.jpg`);
+            }
         }
         return createChapterDetails({
             id: chapterId,
