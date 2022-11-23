@@ -1310,7 +1310,7 @@ class HentaiEra extends Bentai_1.Bentai {
         super(...arguments);
         this.baseUrl = DOMAIN;
         this.languageCode = paperback_extensions_common_1.LanguageCode.ENGLISH;
-        this.imageCDN = 'https://m2.hentaiera.com';
+        this.imageCDN = 'hentaiera.com';
     }
 }
 exports.HentaiEra = HentaiEra;
